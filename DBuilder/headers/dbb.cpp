@@ -11,6 +11,17 @@ namespace dbb {
 	}
 	
 
+	std::string integer(const std::string& s) {
+		return s +" INT";
+	}
+	std::string BIGinteger(const std::string& s) {
+		return s +" BIGINT";
+	}
+	std::string SMALLinteger(const std::string& s) {
+		return s +" SMALLINT";
+	}
+
+
 	/**
 	* a creating table function :
 	* @param name: table name (const char*)

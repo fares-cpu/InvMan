@@ -9,6 +9,9 @@
 namespace dbb {
 	std::string id();
 	std::string string(const std::string& s);
+	std::string integer(const std::string& s);
+	std::string BIGinteger(const std::string& s);
+	std::string SMALLinteger(const std::string& s);
 
 	/**
 	* a creating table function :

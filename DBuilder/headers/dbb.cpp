@@ -10,13 +10,13 @@ namespace dbb {
 		return s+" TEXT";
 	}
 	std::string integer(const std::string& s) {
-		return s + " INT";
+		return s +" INT";
 	}
 	std::string BIGinteger(const std::string& s) {
-		return s + "BIGINT";
+		return s +" BIGINT";
 	}
 	std::string SMALLinteger(const std::string& s) {
-		return s + "SMALLINT";
+		return s +" SMALLINT";
 	}
 
 

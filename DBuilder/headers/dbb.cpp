@@ -9,6 +9,16 @@ namespace dbb {
 	std::string string(const std::string& s) {
 		return s+" TEXT";
 	}
+	std::string integer(const std::string& s) {
+		return s + " INT";
+	}
+	std::string BIGinteger(const std::string& s) {
+		return s + "BIGINT";
+	}
+	std::string SMALLinteger(const std::string& s) {
+		return s + "SMALLINT";
+	}
+
 
 	/**
 	* a creating table function :

@@ -21,6 +21,16 @@ namespace dbb {
 	*/
 	bool create_table(const std::string& tablename, const std::vector<std::string>& columns, pqxx::work& tx);
 	/**
+	* a creating table function :
+	* @param name: table name (const char*)
+	* @param tx: active transaction
+	* @param num: number of columns
+	* @param args (...) columns of the table
+	*
+	* note that after calling `create_table` for all tables in the application, you need to commit them manually
+	*/
+	bool create_table(const std::string& tablename, const std::vector<std::string>& columns, const std::vector<std::string>& constrains, pqxx::work& tx);
+	/**
 	* drop table 
 	* @param tablename
 	* @param tx: active transaction

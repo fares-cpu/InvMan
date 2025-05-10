@@ -7,8 +7,9 @@ namespace dbb {
 		return "ID INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY";
 	}
 	std::string string(const std::string& s) {
-		return s+" TEXT";
+		return s + " TEXT";
 	}
+	
 
 	/**
 	* a creating table function :
@@ -25,7 +26,34 @@ namespace dbb {
 
 		for (size_t i = 0; i < columns.size(); i++) {
 			query << columns[i];
-			if (i + 1 < columns.size()) query << ", ";
+			if (i + 1 < columns.size()) query << ", \n";
+		}
+		query << ");";
+		try {
+			tx.exec(query.str());
+			return true;
+		}
+		catch (const std::exception& e) {
+			std::cout << e.what() << std::endl;
+			return false;
+		}
+	}
+	/**
+* a creating table function :
+* @param name: table name (const char*)
+* @param tx: active transaction
+* @param num: number of columns
+* @param args (...) columns of the table
+*
+* note that after calling `create_table` for all tables in the application, you need to commit them manually
+*/
+	bool create_table(const std::string& tablename, const std::vector<std::string>& columns, const std::vector<std::string>& constrains, pqxx::work& tx) {
+		std::ostringstream query;
+		query << "CREATE TABLE IF NOT EXISTS " << tablename << "( ";
+
+		for (size_t i = 0; i < columns.size(); i++) {
+			query << columns[i];
+			if (i + 1 < columns.size()) query << ", \n";
 		}
 		query << ");";
 		try {

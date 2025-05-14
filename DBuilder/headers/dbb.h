@@ -12,6 +12,12 @@ namespace dbb {
 	std::string integer(const std::string& s);
 	std::string BIGinteger(const std::string& s);
 	std::string SMALLinteger(const std::string& s);
+	std::string doubleprecision(const std::string& s);
+	std::string doubleprecision1(const std::string& s);
+	std::string real(const std::string& s);
+	std::string date(const std::string& s);
+	std::string boolean(const std::string& s);
+	std::string timestamp(const std::string& s);
 
 	/**
 	* a creating table function :

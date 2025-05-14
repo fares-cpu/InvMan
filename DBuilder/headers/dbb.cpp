@@ -18,6 +18,19 @@ namespace dbb {
 	std::string SMALLinteger(const std::string& s) {
 		return s +" SMALLINT";
 	}
+	std::string doubleprecision (const std::string& s) {
+		return s + " float";
+	}
+	std::string doubleprecision (const std::string& s) {
+		return s + " float8";
+	}
+	std::string real (const std::string& s) {
+		return s + " float";
+	}
+	std::string date (const std::string& s){
+		return s + " DATE NOT NULL DEFAULT CURRENT_DATE";
+	}
+
 
 
 	/**
@@ -63,6 +76,7 @@ namespace dbb {
 			return false;
 		}
 	}
+
 }
 
 

@@ -21,7 +21,7 @@ namespace dbb {
 	std::string doubleprecision (const std::string& s) {
 		return s + " float";
 	}
-	std::string doubleprecision (const std::string& s) {
+	std::string doubleprecision1 (const std::string& s) {
 		return s + " float8";
 	}
 	std::string real (const std::string& s) {
@@ -29,6 +29,12 @@ namespace dbb {
 	}
 	std::string date (const std::string& s){
 		return s + " DATE NOT NULL DEFAULT CURRENT_DATE";
+	}
+	std::string boolean(const std::string& s) {
+		return s + "BOOLEAN ";
+	}
+	std::string timestamp(const std::string& s) {
+		return s + "TIMESTAMP";
 	}
 
 

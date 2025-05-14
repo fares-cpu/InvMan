@@ -18,6 +18,7 @@ namespace dbb {
 	std::string date(const std::string& s);
 	std::string boolean(const std::string& s);
 	std::string timestamp(const std::string& s);
+	std::string timestampz(const std::string& s);
 
 	/**
 	* a creating table function :

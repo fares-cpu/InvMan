@@ -1,14 +1,47 @@
 #include<dbb.h>
 #include<iostream>
 
-
 namespace dbb {
 	std::string id() {
 		return "ID INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY";
 	}
 	std::string string(const std::string& s) {
-		return s+" TEXT";
+		return s + " TEXT";
 	}
+	
+
+	std::string integer(const std::string& s) {
+		return s +" INT";
+	}
+	std::string BIGinteger(const std::string& s) {
+		return s +" BIGINT";
+	}
+	std::string SMALLinteger(const std::string& s) {
+		return s +" SMALLINT";
+	}
+	std::string doubleprecision (const std::string& s) {
+		return s + " float";
+	}
+	std::string doubleprecision1 (const std::string& s) {
+		return s + " float8";
+	}
+	std::string real (const std::string& s) {
+		return s + " float";
+	}
+	std::string date (const std::string& s){
+		return s + " DATE NOT NULL DEFAULT CURRENT_DATE";
+	}
+	std::string boolean(const std::string& s) {
+		return s + " BOOLEAN ";
+	}
+	std::string timestamp(const std::string& s) {
+		return s + " TIMESTAMP";
+	}
+	std::string timestampz(const std::string& s) {
+		return s + " TIMESTAMPZ";
+	}
+
+
 
 	/**
 	* a creating table function :
@@ -25,9 +58,10 @@ namespace dbb {
 
 		for (size_t i = 0; i < columns.size(); i++) {
 			query << columns[i];
-			if (i + 1 < columns.size()) query << ", ";
+			if (i + 1 < columns.size()) query << ", \n";
 		}
 		query << ");";
+
 		try {
 			tx.exec(query.str());
 			return true;
@@ -42,9 +76,9 @@ namespace dbb {
 	* @param tablename
 	* @param tx: active transaction
 	*/
-	bool drop_table(const std::string& tablename, pqxx::work& tx) {
+	bool drop_table(const std::string& tablename, pqxx::work &tx) {
 		try {
-			tx.exec((std::string)("DROP TABLE IF EXIST" + tablename));
+			tx.exec((std::string)("DROP TABLE IF EXISTS" + tablename));
 			tx.commit();
 			return true;
 		}
@@ -53,6 +87,7 @@ namespace dbb {
 			return false;
 		}
 	}
+
 }
 
 
@@ -108,6 +143,4 @@ connection::~connection(){
 
 connection* connection::s_instance = nullptr;
 std::mutex connection::s_mutex;
-
-
 

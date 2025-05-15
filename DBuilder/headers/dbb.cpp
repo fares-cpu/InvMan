@@ -32,10 +32,10 @@ namespace dbb {
 		return s + " DATE NOT NULL DEFAULT CURRENT_DATE";
 	}
 	std::string boolean(const std::string& s) {
-		return s + "BOOLEAN ";
+		return s + " BOOLEAN ";
 	}
 	std::string timestamp(const std::string& s) {
-		return s + "TIMESTAMP";
+		return s + " TIMESTAMP";
 	}
 
 
@@ -75,7 +75,7 @@ namespace dbb {
 	*/
 	bool drop_table(const std::string& tablename, pqxx::work &tx) {
 		try {
-			tx.exec((std::string)("DROP TABLE IF EXIST" + tablename));
+			tx.exec((std::string)("DROP TABLE IF EXISTS" + tablename));
 			tx.commit();
 			return true;
 		}

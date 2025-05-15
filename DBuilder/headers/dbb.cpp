@@ -37,6 +37,9 @@ namespace dbb {
 	std::string timestamp(const std::string& s) {
 		return s + " TIMESTAMP";
 	}
+	std::string timestampz(const std::string& s) {
+		return s + " TIMESTAMPZ";
+	}
 
 
 

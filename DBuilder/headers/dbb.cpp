@@ -1,6 +1,6 @@
 #include<dbb.h>
 #include<iostream>
-
+#include<string>
 namespace dbb {
 	std::string id() {
 		return "ID INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY";
@@ -11,16 +11,16 @@ namespace dbb {
 	std::string integer(const std::string& s) {
 		return s +" INT";
 	}
-	std::string BIGinteger(const std::string& s) {
+	std::string bigInteger(const std::string& s) {
 		return s +" BIGINT";
 	}
-	std::string SMALLinteger(const std::string& s) {
+	std::string smallInteger(const std::string& s) {
 		return s +" SMALLINT";
 	}
-	std::string doubleprecision (const std::string& s) {
+	std::string Float (const std::string& s) {
 		return s + " float";
 	}
-	std::string doubleprecision1 (const std::string& s) {
+	std::string Float8 (const std::string& s) {
 		return s + " float8";
 	}
 	std::string real (const std::string& s) {
@@ -35,11 +35,17 @@ namespace dbb {
 	std::string timestamp(const std::string& s) {
 		return s + " TIMESTAMP";
 	}
+	std::string timestamps() {
+		return "created_at timestamp default current_timestamp , updated_at timestamp default current_timestamp";
+	}
 	std::string timestampz(const std::string& s) {
 		return s + " TIMESTAMPZ";
 	}
-	std::string numeric(const std::string& s) {
-		return s + " NUMERIC";
+	std::string numeric(const std::string& s, int before, int after) {
+		return s + " NUMERIC(" + std::to_string(before) + "," + std::to_string(after) + ")";
+	}
+	std::string foreign_key(const std::string& table) {
+		return table + "_id INTEGER REFERENCES " + table + "s(id)";
 	}
 
 

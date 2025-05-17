@@ -8,8 +8,6 @@ namespace dbb {
 	std::string string(const std::string& s) {
 		return s + " TEXT";
 	}
-	
-
 	std::string integer(const std::string& s) {
 		return s +" INT";
 	}
@@ -26,7 +24,7 @@ namespace dbb {
 		return s + " float8";
 	}
 	std::string real (const std::string& s) {
-		return s + " float";
+		return s + " REAL";
 	}
 	std::string date (const std::string& s){
 		return s + " DATE NOT NULL DEFAULT CURRENT_DATE";
@@ -39,6 +37,9 @@ namespace dbb {
 	}
 	std::string timestampz(const std::string& s) {
 		return s + " TIMESTAMPZ";
+	}
+	std::string numeric(const std::string& s) {
+		return s + " NUMERIC";
 	}
 
 

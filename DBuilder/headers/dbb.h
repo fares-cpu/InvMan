@@ -32,14 +32,14 @@ namespace dbb {
 	* 
 	* note that after calling `create_table` for all tables in the application, you need to commit them manually
 	*/
-	bool create_table(const std::string& tablename, const std::vector<std::string>& columns, pqxx::work& tx);
+	bool create_table(const std::string& tablename, const std::vector<std::string>& columns, pqxx::transaction_base& tx);
 	
 	/**
 	* drop table 
 	* @param tablename
 	* @param tx: active transaction
 	*/
-	bool drop_table(const std::string& tablename, pqxx::work& tx);
+	bool drop_table(const std::string& tablename, pqxx::transaction_base& tx);
 
 	class Model {
 	public:

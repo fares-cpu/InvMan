@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBuilder", "DBuilder\DBuilder.vcxproj", "{5D1DCFED-06CC-4EE8-B633-95532450F17C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBAPI", "DBAPI\DBAPI.vcxproj", "{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{5D1DCFED-06CC-4EE8-B633-95532450F17C}.Release|x64.Build.0 = Release|x64
 		{5D1DCFED-06CC-4EE8-B633-95532450F17C}.Release|x86.ActiveCfg = Release|Win32
 		{5D1DCFED-06CC-4EE8-B633-95532450F17C}.Release|x86.Build.0 = Release|Win32
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Debug|x64.ActiveCfg = Debug|x64
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Debug|x64.Build.0 = Debug|x64
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Debug|x86.ActiveCfg = Debug|Win32
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Debug|x86.Build.0 = Debug|Win32
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Release|x64.ActiveCfg = Release|x64
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Release|x64.Build.0 = Release|x64
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Release|x86.ActiveCfg = Release|Win32
+		{35CC0CCF-3FE3-45BC-9A76-0163D9EC791D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

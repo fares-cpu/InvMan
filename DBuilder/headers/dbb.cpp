@@ -59,7 +59,7 @@ namespace dbb {
 	* 
 	* note that after calling `create_table` for all tables in the application, you need to commit them manually
 	*/
-	bool create_table(const std::string& tablename,const std::vector<std::string>& columns, pqxx::work& tx) {
+	bool create_table(const std::string& tablename,const std::vector<std::string>& columns, pqxx::transaction_base& tx) {
 		std::ostringstream query;
 		query << "CREATE TABLE IF NOT EXISTS " << tablename << "( ";
 
@@ -83,7 +83,7 @@ namespace dbb {
 	* @param tablename
 	* @param tx: active transaction
 	*/
-	bool drop_table(const std::string& tablename, pqxx::work &tx) {
+	bool drop_table(const std::string& tablename, pqxx::transaction_base& tx) {
 		try {
 			tx.exec((std::string)("DROP TABLE IF EXISTS" + tablename));
 			tx.commit();
